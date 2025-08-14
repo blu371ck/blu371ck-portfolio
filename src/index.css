@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@theme {
+    --color-dirt-500: oklch(0.39 0.0227 238.4);
+}
