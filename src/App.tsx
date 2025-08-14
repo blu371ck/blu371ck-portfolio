@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SideNav from "./components/SideNav/SideNav";
+import RoleAnimator from './components/RoleAnimator/RoleAnimator';
 
 const NavIcon = ({ path }: { path: string }) => (
   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -11,7 +12,7 @@ const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-dirt-500 font-sans">
+    <div className="relative min-h-screen bg-dirt-500 font-sans text-white">
       <SideNav isOpen={isNavOpen} onToggle={() => setIsNavOpen(!isNavOpen)}>
         <ul className="space-y-2">
           <li>
@@ -41,13 +42,14 @@ const App = () => {
         </ul>
       </SideNav>
 
-      <main className={`p-8 transition-all duration-300 ease-in-out ${isNavOpen ? 'ml-64' : 'ml-20'}`}>
-        <h1 className="text-3xl font-bold text-white">
-          Main Content Area
+      <main className={`h-screen flex flex-col items-center justify-center text-center transition-all duration-300 ease-in-out ${isNavOpen ? 'ml-64' : 'ml-20'}`}>
+        <h1 className="text-6xl font-bold tracking-tight">
+          Andrew McKenzie
         </h1>
-        <p className="mt-4 text-gray-300">
-          This content will be pushed to the right when the navigation opens.
-        </p>
+        <div className="mt-4 flex items-center text-3xl font-light text-gray-300">
+          <p className="mr-3">Cyber</p>
+          <RoleAnimator />
+        </div>
       </main>
     </div>
   );
