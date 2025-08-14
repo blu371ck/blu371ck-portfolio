@@ -23,7 +23,7 @@ describe('RoleAnimator Component', () => {
       jest.advanceTimersByTime(3000);
     });
 
-    expect(animatedDiv).toHaveStyle({ transform: 'translateY(-2.5rem)' });
+    expect(animatedDiv).toHaveStyle({ transform: 'translateY(-5rem)' });
   });
 
   it('loops back to the first role after the last one', () => {

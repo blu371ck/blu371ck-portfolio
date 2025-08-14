@@ -11,14 +11,13 @@ const SideNav: React.FC<SideNavProps> = ({ children, isOpen, onToggle }) => {
     <>
       <aside
         className={`
-          fixed top-0 left-0 h-screen bg-white shadow-xl transition-all duration-300 ease-in-out z-20
-          border-r border-gray-200/50
+          fixed top-0 left-0 h-screen shadow-xl transition-all duration-300 ease-in-out z-20
           ${isOpen ? 'w-64' : 'w-20'}
         `}
         aria-label="Sidebar"
       >
         <div className="h-full flex flex-col">
-          <div className="flex items-center justify-center h-16 border-b border-gray-200/50 shrink-0">
+          <div className="flex items-center justify-center h-16 shrink-0">
             <div className={`text-2xl font-bold text-blue-600 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
               Logo
             </div>

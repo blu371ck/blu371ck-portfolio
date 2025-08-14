@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=Inter:wght@400;700&display=swap");
 @import "tailwindcss";
 
 @theme {
     --color-dirt-500: oklch(0.39 0.0227 238.4);
+    --font-sub-header: "IBM Plex Mono", mono;
 }

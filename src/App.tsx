@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SideNav from "./components/SideNav/SideNav";
 import RoleAnimator from './components/RoleAnimator/RoleAnimator';
+import CyberBackground from './components/CyberBackground/CyberBackground';
 
 const NavIcon = ({ path }: { path: string }) => (
   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -12,7 +13,8 @@ const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-dirt-500 font-sans text-white">
+    <div className="relative min-h-screen bg-black font-sans text-white">
+      <CyberBackground />
       <SideNav isOpen={isNavOpen} onToggle={() => setIsNavOpen(!isNavOpen)}>
         <ul className="space-y-2">
           <li>
@@ -42,13 +44,22 @@ const App = () => {
         </ul>
       </SideNav>
 
-      <main className={`h-screen flex flex-col items-center justify-center text-center transition-all duration-300 ease-in-out ${isNavOpen ? 'ml-64' : 'ml-20'}`}>
-        <h1 className="text-6xl font-bold tracking-tight">
+      {/* Added z-10 to ensure content stays on top of the background */}
+      <main className={`relative h-screen flex flex-col items-center justify-center text-center transition-all duration-300 ease-in-out z-10 ${isNavOpen ? 'ml-64' : 'ml-20'}`}>
+        <h1 className="text-9xl font-bold tracking-tight font-sub-header">
           Andrew McKenzie
         </h1>
-        <div className="mt-4 flex items-center text-3xl font-light text-gray-300">
-          <p className="mr-3">Cyber</p>
+        <div className="mt-4 flex items-center text-6xl font-light text-gray-300 font-sub-header">
+          <p className="mr-4">Cyber</p>
           <RoleAnimator />
+        </div>
+
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+          <div className="animate-bounce">
+            <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
         </div>
       </main>
     </div>
