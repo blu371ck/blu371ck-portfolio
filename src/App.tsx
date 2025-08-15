@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SideNav from "./components/SideNav/SideNav";
 import RoleAnimator from './components/RoleAnimator/RoleAnimator';
 import CyberBackground from './components/CyberBackground/CyberBackground';
+import SocialLinks from './components/Utility/SocialLinks';
 
 const NavIcon = ({ path }: { path: string }) => (
   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -44,15 +45,21 @@ const App = () => {
         </ul>
       </SideNav>
 
-      {/* Added z-10 to ensure content stays on top of the background */}
-      <main className={`relative h-screen flex flex-col items-center justify-center text-center transition-all duration-300 ease-in-out z-10 ${isNavOpen ? 'ml-64' : 'ml-20'}`}>
-        <h1 className="text-9xl font-bold tracking-tight font-sub-header">
-          Andrew McKenzie
-        </h1>
-        <div className="mt-4 flex items-center text-6xl font-light text-gray-300 font-sub-header">
-          <p className="mr-4">Cyber</p>
-          <RoleAnimator />
+      <main className={`relative h-screen flex flex-col items-center justify-center text-center transition-all duration-300 ease-in-out z-10 md:px-0 ${isNavOpen ? 'md:ml-64' : 'md:ml-20'}`}>
+        <div className="flex-grow flex flex-col items-center justify-center">
+          <h1 className="text-9xl font-bold tracking-tight font-sub-header">
+            Andrew McKenzie
+          </h1>
+          <div className="mt-4 flex items-center text-3xl md:text-5xl font-light text-gray-300 font-sub-header">
+            <p className="mr-4">Cyber</p>
+            <RoleAnimator />
+          </div>
+            <div className="mt-4">
+            <SocialLinks/>
+          </div>
         </div>
+
+
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
           <div className="animate-bounce">

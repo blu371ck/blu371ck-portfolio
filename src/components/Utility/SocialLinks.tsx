@@ -1,0 +1,17 @@
+import { LinkedInIcon, GitHubIcon, EmailIcon } from "./Icons";
+
+const SocialLinks = () => (
+  <div className="flex items-center space-x-6">
+    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+      <LinkedInIcon className="w-8 h-8" />
+    </a>
+    <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+      <GitHubIcon className="w-8 h-8" />
+    </a>
+    <a href="mailto:email@example.com" className="text-gray-400 hover:text-white transition-colors duration-300">
+      <EmailIcon className="w-8 h-8" />
+    </a>
+  </div>
+);
+
+export default SocialLinks

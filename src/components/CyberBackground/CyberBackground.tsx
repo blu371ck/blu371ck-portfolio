@@ -5,10 +5,7 @@ import { type Container } from 'tsparticles-engine';
 import { loadSlim } from "tsparticles-slim"; 
 
 const CyberBackground = () => {
-    // This function loads the particles engine
     const particlesInit = useCallback(async (engine: Engine) => {
-        // You can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-        // This loads the slim bundle, which is smaller and suitable for most cases
         await loadSlim(engine);
     }, []);
 

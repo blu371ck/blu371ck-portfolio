@@ -12,7 +12,7 @@ const SideNav: React.FC<SideNavProps> = ({ children, isOpen, onToggle }) => {
       <aside
         className={`
           fixed top-0 left-0 h-screen shadow-xl transition-all duration-300 ease-in-out z-20
-          ${isOpen ? 'w-64' : 'w-20'}
+          ${isOpen ? 'w-64' : 'w-16 md:w-20'}
         `}
         aria-label="Sidebar"
       >
