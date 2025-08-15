@@ -1,8 +1,5 @@
-// File: src/components/Navigation/Navigation.test.tsx
-
 import React from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
-// Make sure to import the Navigation component from its actual file location
 import Navigation from './Navigation';
 
 // Mock component to pass as children for testing
