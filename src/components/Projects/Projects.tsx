@@ -1,28 +1,14 @@
-import React from 'react';
-import digitalForensicImage from './assets/digital_forensics.png';
-import networkForensicImage from './assets/network_forensics.png';
-import socImage from './assets/soc_image.png';
-import automationImage from './assets/automation_image.png';
+import React, { useState, useEffect } from 'react';
+import socThreatImage from './assets/soc_threat_hunting.png';
+import networkForensics from './assets/network_forensics.png';
+import diskForensics from './assets/disk_forensics.png';
+import securityAutomation from './assets/security_automation.png';
 
-// Define the structure for a single project
-export interface Project {
-    title: string;
-    url: string;
-}
-
-// Define the structure for a project category
-export interface ProjectCategory {
-    title: string;
-    image: string;
-    summary: string;
-    projects: Project[];
-}
-
-// Data for all project categories
-export const projectData: ProjectCategory[] = [
+// --- Data for the Projects Section ---
+const projectData = [
     {
         title: "Digital Forensics",
-        image: digitalForensicImage,
+        image: diskForensics,
         summary: "Investigating digital evidence from disk and memory to uncover the full story of a security incident. These projects focus on analyzing artifacts left behind by attackers to reconstruct their actions and understand the scope of a compromise.",
         projects: [
             { title: "Trojanized Application & Malware Analysis", url: "https://github.com/blu371ck/DFIR-Challenge-Trojanized-Application-Analysis" },
@@ -31,7 +17,7 @@ export const projectData: ProjectCategory[] = [
     },
     {
         title: "Network Forensics",
-        image: networkForensicImage,
+        image: networkForensics,
         summary: "Analyzing network traffic to detect and investigate malicious activity. These projects involve dissecting packet captures (PCAPs) to identify attack patterns, trace C2 communications, and understand how adversaries operate on the network.",
         projects: [
             { title: "Network Forensic Analysis of a Stealthy Malware Attack", url: "https://github.com/blu371ck/Network-Forensic-Analysis-Obfuscated-PowerShell-MultiStage" },
@@ -42,7 +28,7 @@ export const projectData: ProjectCategory[] = [
     },
     {
         title: "SOC Analysis & Threat Hunting",
-        image: socImage,
+        image: socThreatImage,
         summary: "Proactively searching for threats within an environment. This project demonstrates the creation of a lab environment to simulate attacks and hunt for indicators of compromise (IOCs) using SIEM and EDR tools.",
         projects: [
             { title: "Security Operations & Threat Hunting Homelab", url: "https://github.com/blu371ck/Security-Operations-Threat-Hunting-Homelab" }
@@ -50,7 +36,7 @@ export const projectData: ProjectCategory[] = [
     },
     {
         title: "SOAR",
-        image: automationImage,
+        image: securityAutomation,
         summary: "Automating the response to security incidents. This project focuses on building a Security Orchestration, Automation, and Response (SOAR) pipeline in AWS to automatically detect and remediate threats found by GuardDuty.",
         projects: [
             { title: "Cloud Warden – Automated AWS Threat Detection and Response", url: "https://github.com/blu371ck/AWS-GuardDuty-Lambda-SOAR" }
@@ -58,50 +44,102 @@ export const projectData: ProjectCategory[] = [
     }
 ];
 
-// Reusable component for displaying a single project category
-export const ProjectCategoryCard = ({ category, reverseLayout = false }: { category: ProjectCategory, reverseLayout?: boolean }) => (
-    <div className={`flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 my-12 ${reverseLayout ? 'md:flex-row-reverse' : ''}`}>
-        {/* Left side: Image and Title */}
-        <div className="w-full md:w-1/2 text-center">
-            <h3 className="text-4xl font-bold text-gray-300 mb-4">{category.title}</h3>
-            <img 
-                src={category.image} 
-                alt={category.title} 
-                className="rounded-lg shadow-lg mx-auto"
-                onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/FF0000/FFFFFF?text=Image+Error'; }}
-            />
-        </div>
-        {/* Right side: Summary and Project Links */}
-        <div className="w-full md:w-1/2">
-            <div className="bg-gray-900 bg-opacity-50 p-6 rounded-lg">
-                <p className="text-lg text-gray-400 mb-4">{category.summary}</p>
-                <ul className="space-y-2">
-                    {category.projects.map((project, index) => (
-                        <li key={index}>
-                            <a 
-                                href={project.url} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="text-blue-400 hover:text-blue-300 hover:underline transition-colors duration-300"
-                            >
-                                {project.title}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
+// --- Type Definitions ---
+interface Project {
+    title: string;
+    url: string;
+}
+
+interface ProjectCategory {
+    title: string;
+    image: string;
+    summary: string;
+    projects: Project[];
+}
+
+// --- Reusable Components ---
+
+const ProjectModal = ({ category, onClose }: { category: ProjectCategory | null; onClose: () => void; }) => {
+    if (!category) return null;
+
+    return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 transition-opacity duration-300">
+            <div className="relative bg-gray-800 rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col">
+                <div className="p-6 flex-grow overflow-y-auto">
+                    <div className="flex flex-col md:flex-row gap-8">
+                        <div className="w-full md:w-1/2">
+                            <img src={category.image} alt={category.title} className="rounded-lg w-full h-auto object-cover" />
+                        </div>
+                        <div className="w-full md:w-1/2 text-gray-300 text-left">
+                            <h3 className="text-3xl font-bold mb-4 text-white">{category.title}</h3>
+                            <p className="text-lg mb-6">{category.summary}</p>
+                            <h4 className="text-xl font-semibold mb-2 text-white">Relevant Projects:</h4>
+                            <ul className="space-y-2 list-disc list-inside">
+                                {category.projects.map(project => (
+                                    <li key={project.title}>
+                                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">{project.title}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </div>
         </div>
+    );
+};
+
+// The Project Card Component
+const ProjectCard = ({ category, onClick }: { category: ProjectCategory; onClick: () => void; }) => (
+    <div 
+        className="cursor-pointer rounded-lg shadow-lg flex flex-col p-6 text-white relative overflow-hidden bg-gray-900 transition-transform duration-300 hover:scale-105"
+        onClick={onClick}
+    >
+        <div className="flex-grow flex items-center justify-center mb-4">
+            <img src={category.image} alt={category.title} className="h-40 w-40 object-contain" />
+        </div>
+        <h3 className="text-2xl font-bold z-10 relative text-center">{category.title}</h3>
     </div>
 );
 
 
+// --- Main Projects Component ---
 const Projects = () => {
+    const [selectedCategory, setSelectedCategory] = useState<ProjectCategory | null>(null);
+
+    // Add/remove a class to the body to prevent scrolling when the modal is open
+    useEffect(() => {
+        if (selectedCategory) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+        // Cleanup function
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [selectedCategory]);
+
+
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-6xl font-bold text-gray-300 font-sub-header mb-12 text-center">My Projects</h2>
-            {projectData.map((category, index) => (
-                <ProjectCategoryCard key={index} category={category} reverseLayout={index % 2 !== 0} />
-            ))}
+        <div className="w-full max-w-7xl mx-auto">
+            <h2 className="text-5xl font-bold text-gray-200 mb-12 text-center">My Projects</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {projectData.map(category => (
+                    <ProjectCard 
+                        key={category.title} 
+                        category={category} 
+                        onClick={() => setSelectedCategory(category)} 
+                    />
+                ))}
+            </div>
+            <ProjectModal 
+                category={selectedCategory} 
+                onClose={() => setSelectedCategory(null)} 
+            />
         </div>
     );
 };

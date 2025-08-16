@@ -21,7 +21,7 @@ const Navigation = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       {/* Side Navigation (Visible on medium screens and up) */}
-      <aside className={`hidden md:flex fixed top-0 left-0 h-screen shadow-xl transition-all duration-300 ease-in-out z-20 ${isSideNavOpen ? 'w-64' : 'w-20'}`} aria-label="Sidebar">
+      <aside className={`hidden md:flex fixed top-0 left-0 h-screen shadow-xl transition-all duration-300 ease-in-out z-20 ${isSideNavOpen ? 'w-64 bg-black' : 'w-20'}`} aria-label="Sidebar">
         <div className="h-full flex flex-col">
           <nav data-testid="desktop-nav-content" className={`flex-1 px-4 py-4 transition-opacity duration-300 ${isSideNavOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} aria-hidden={!isSideNavOpen}>
             {children}
