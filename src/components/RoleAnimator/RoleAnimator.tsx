@@ -25,7 +25,7 @@ const RoleAnimator = () => {
         {roles.map((role) => (
           <div 
             key={role} 
-            className="h-20 flex items-center justify-center"
+            className="h-20 flex items-center justify-center text-htb-500"
             style={{ height: `${itemHeightRem}rem` }}
           >
             {role}

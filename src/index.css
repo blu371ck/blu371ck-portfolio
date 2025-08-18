@@ -2,6 +2,6 @@
 @import "tailwindcss";
 
 @theme {
-    --color-dirt-500: oklch(0.39 0.0227 238.4);
+    --color-htb-500: oklch(0.8714 0.286 141.53);
     --font-sub-header: "IBM Plex Mono", mono;
 }

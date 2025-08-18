@@ -64,10 +64,10 @@ const EducationAndCertifications = () => {
 
             <div className="relative my-16">
                 <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                    <div className="w-full border-t border-gray-700" />
+                    <div className="w-full border-t border-htb-500" />
                 </div>
                 <div className="relative flex justify-center">
-                    <span className="bg-black px-2 text-gray-500">
+                    <span className="bg-black px-2 text-htb-500">
                         <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14" /></svg>
                     </span>
                 </div>

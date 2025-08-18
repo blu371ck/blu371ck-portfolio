@@ -65,6 +65,7 @@ const ProjectModal = ({ category, onClose }: { category: ProjectCategory | null;
                 <div className="p-6 flex-grow overflow-y-auto">
                     <div className="flex flex-col md:flex-row gap-8">
                         <div className="w-full md:w-1/2">
+                            {category.image}
                             <img src={category.image} alt={category.title} className="rounded-lg w-full h-auto object-cover" />
                         </div>
                         <div className="w-full md:w-1/2 text-gray-300 text-left">

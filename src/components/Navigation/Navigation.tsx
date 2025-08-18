@@ -1,12 +1,12 @@
 import React from 'react';
-import { Home, User, Briefcase, Wrench, GraduationCap, Mail } from 'lucide-react';
+import { Home, User, FolderCog, Wrench, GraduationCap, Mail } from 'lucide-react';
 
 export const navLinks = [
     { name: 'Home', href: '#home', Icon: Home },
     { name: 'About Me', href: '#about', Icon: User },
-    { name: 'Projects', href: '#projects', Icon: Briefcase },
-    { name: 'Skills', href: '#skills', Icon: Wrench },
-    { name: 'Education', href: '#education', Icon: GraduationCap },
+    { name: 'Projects', href: '#projects', Icon: FolderCog },
+    { name: 'Skills and Technologies', href: '#skills', Icon: Wrench },
+    { name: 'Education and Certifications', href: '#education', Icon: GraduationCap },
     { name: 'Contact', href: '#contact', Icon: Mail },
 ];
 
@@ -20,7 +20,7 @@ const NavLink = ({ name, href, Icon }: { name: string; href: string; Icon: React
             document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
         }}
     >
-        <Icon className="w-6 h-6 text-gray-400 group-hover:text-white" />
+        <Icon className="w-6 h-6 text-htb-500 group-hover:text-white" />
         <span className="absolute left-full ml-4 px-2 py-1 bg-gray-900 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
             {name}
         </span>

@@ -61,7 +61,7 @@ const Skills = () => {
             <h2 className="text-5xl font-bold text-gray-200 mb-12">Skills & Technologies</h2>
             {categories.map(category => (
                 <div key={category} className="mb-8">
-                    <h3 className="text-2xl font-semibold text-gray-400 mb-4 text-left border-b border-gray-700 pb-2">{category}</h3>
+                    <h3 className="text-2xl font-semibold text-gray-400 mb-4 text-left border-b border-htb-500 pb-2">{category}</h3>
                     <div className="flex flex-wrap gap-3 justify-start">
                         {skillsData.filter(skill => skill.category === category).map(skill => (
                             <div key={skill.name} className={`group relative ${categoryColors[category]} text-white font-semibold py-2 px-4 rounded-full shadow-md transition-transform duration-300 hover:scale-110`}>
