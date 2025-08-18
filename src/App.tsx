@@ -5,6 +5,7 @@ import CyberBackground from './components/CyberBackground/CyberBackground';
 import SocialLinks from './components/Utility/SocialLinks';
 import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
+import EducationAndCertifications from './components/EducationAndCertifications/EducationAndCertifications';
 
 // A reusable navigation icon component
 const NavIcon = ({ path }: { path: string }) => (
@@ -32,10 +33,12 @@ const App = () => {
   const aboutRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
+  const educationRef = useRef<HTMLElement>(null);
   const [isMainVisible, setMainVisible] = useState(true);
   const [isAboutVisible, setAboutVisible] = useState(false);
   const [isProjectsVisible, setProjectsVisible] = useState(false);
   const [isSkillsVisible, setSkillsVisible] = useState(false);
+  const [isEducationVisible, setEducationVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,6 +48,7 @@ const App = () => {
           else if (entry.target === aboutRef.current) setAboutVisible(entry.isIntersecting);
           else if (entry.target === projectsRef.current) setProjectsVisible(entry.isIntersecting);
           else if (entry.target === skillsRef.current) setSkillsVisible(entry.isIntersecting);
+          else if (entry.target === educationRef.current) setEducationVisible(entry.isIntersecting);
         });
       }, { threshold: 0.5 }
     );
@@ -53,12 +57,14 @@ const App = () => {
     if (aboutRef.current) observer.observe(aboutRef.current);
     if (projectsRef.current) observer.observe(projectsRef.current);
     if (skillsRef.current) observer.observe(skillsRef.current);
+    if (educationRef.current) observer.observe(educationRef.current);
 
     return () => {
       if (mainRef.current) observer.unobserve(mainRef.current);
       if (aboutRef.current) observer.unobserve(aboutRef.current);
       if (projectsRef.current) observer.unobserve(projectsRef.current);
       if (skillsRef.current) observer.unobserve(skillsRef.current);
+      if (educationRef.current) observer.unobserve(educationRef.current);
     };
   }, []);
 
@@ -96,11 +102,16 @@ const App = () => {
 
       <section ref={projectsRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 ${isNavOpen ? 'md:ml-64' : 'md:ml-20'} ${isProjectsVisible ? 'opacity-100' : 'opacity-0'}`}>
         <Projects />
-        <ScrollDownIndicator text="Skills & Technology" />
+        <ScrollDownIndicator text="Skills" />
       </section>
 
       <section ref={skillsRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 ${isNavOpen ? 'md:ml-64' : 'md:ml-20'} ${isSkillsVisible ? 'opacity-100' : 'opacity-0'}`}>
         <Skills />
+        <ScrollDownIndicator text="Education" />
+      </section>
+
+      <section ref={educationRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 ${isNavOpen ? 'md:ml-64' : 'md:ml-20'} ${isEducationVisible ? 'opacity-100' : 'opacity-0'}`}>
+        <EducationAndCertifications />
         <ScrollDownIndicator text="Contact Me" />
       </section>
     </div>

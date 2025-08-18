@@ -12,7 +12,8 @@ const projectData = [
         summary: "Investigating digital evidence from disk and memory to uncover the full story of a security incident. These projects focus on analyzing artifacts left behind by attackers to reconstruct their actions and understand the scope of a compromise.",
         projects: [
             { title: "Trojanized Application & Malware Analysis", url: "https://github.com/blu371ck/DFIR-Challenge-Trojanized-Application-Analysis" },
-            { title: "Memory Forensics Case Study: BlackEnergy v2", url: "https://github.com/blu371ck/Memory-Forensics-BlackEnergy-Malware-Analysis" }
+            { title: "Memory Forensics Case Study: BlackEnergy v2", url: "https://github.com/blu371ck/Memory-Forensics-BlackEnergy-Malware-Analysis" },
+            { title: "Forensic Investigation into Illegal User Activity", url: "https://github.com/blu371ck/DFIR-Analysis-Of-Illegal-User-Activity" }
         ]
     },
     {
