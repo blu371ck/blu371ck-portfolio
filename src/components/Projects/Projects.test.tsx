@@ -1,10 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 
-// Since the components are all in App.tsx, we need to recreate them here for testing.
-// In a real application, these would be imported from their own files.
-
-// --- START: Component Definitions (Copied from App.tsx) ---
 const projectsProjectData = [
     {
         title: "Digital Forensics",
@@ -78,8 +74,6 @@ const Projects = () => {
         </div>
     );
 };
-// --- END: Component Definitions ---
-
 
 describe('Projects Component', () => {
     it('renders the main heading and project cards', () => {

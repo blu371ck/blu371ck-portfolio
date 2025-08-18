@@ -14,7 +14,7 @@ describe('SocialLinks Component', () => {
     const githubLink = allLinks.find(link => link.getAttribute('href') === 'https://www.github.com');
     expect(githubLink).toBeInTheDocument();
 
-    const emailLink = allLinks.find(link => link.getAttribute('href') === 'mailto:email@example.com');
+    const emailLink = allLinks.find(link => link.getAttribute('href') === 'mailto:url54.andrew@gmail.com');
     expect(emailLink).toBeInTheDocument();
   });
 });

@@ -4,7 +4,6 @@ import networkForensics from './assets/network_forensics.png';
 import diskForensics from './assets/disk_forensics.png';
 import securityAutomation from './assets/security_automation.png';
 
-// --- Data for the Projects Section ---
 const projectData = [
     {
         title: "Digital Forensics",
@@ -45,7 +44,6 @@ const projectData = [
     }
 ];
 
-// --- Type Definitions ---
 interface Project {
     title: string;
     url: string;
@@ -57,8 +55,6 @@ interface ProjectCategory {
     summary: string;
     projects: Project[];
 }
-
-// --- Reusable Components ---
 
 const ProjectModal = ({ category, onClose }: { category: ProjectCategory | null; onClose: () => void; }) => {
     if (!category) return null;
@@ -93,7 +89,6 @@ const ProjectModal = ({ category, onClose }: { category: ProjectCategory | null;
     );
 };
 
-// The Project Card Component
 const ProjectCard = ({ category, onClick }: { category: ProjectCategory; onClick: () => void; }) => (
     <div 
         className="cursor-pointer rounded-lg shadow-lg flex flex-col p-6 text-white relative overflow-hidden bg-gray-900 transition-transform duration-300 hover:scale-105"
@@ -107,18 +102,15 @@ const ProjectCard = ({ category, onClick }: { category: ProjectCategory; onClick
 );
 
 
-// --- Main Projects Component ---
 const Projects = () => {
     const [selectedCategory, setSelectedCategory] = useState<ProjectCategory | null>(null);
 
-    // Add/remove a class to the body to prevent scrolling when the modal is open
     useEffect(() => {
         if (selectedCategory) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'auto';
         }
-        // Cleanup function
         return () => {
             document.body.style.overflow = 'auto';
         };

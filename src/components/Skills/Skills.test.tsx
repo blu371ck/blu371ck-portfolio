@@ -6,10 +6,8 @@ const skillsData = [
     { name: 'AWS', category: 'Cloud & DevOps' },
     { name: 'Wireshark', category: 'Security Tools' },
     { name: 'Pandas', category: 'Data Analysis' },
-    // ... other skills data would be here
 ];
 
-// Skills Component
 const Skills = () => {
     const categories = [...new Set(skillsData.map(skill => skill.category))];
     return (

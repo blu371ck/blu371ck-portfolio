@@ -15,7 +15,6 @@ import comptiaPEN from "./assets/comptiaPEN.png";
 import ceh from "./assets/CEH.png";
 import eces from "./assets/ECES.png";
 
-// --- Data for the Education Section ---
 export const educationData = [
     {
         logoUrl: wguLogo,
@@ -29,7 +28,6 @@ export const educationData = [
     }
 ];
 
-// --- Data for the Certifications Section ---
 export const certificationData = [
     { name: 'CompTIA A+', logoUrl: aPlus },
     { name: 'CompTIA Network+', logoUrl: netPlus },
@@ -47,13 +45,11 @@ export const certificationData = [
     { name: 'AWS Security - Specialty', logoUrl: awsSec },
 ];
 
-// --- Main Education & Certifications Component ---
 const EducationAndCertifications = () => {
     return (
         <div className="w-full max-w-6xl mx-auto text-center">
             <h2 className="text-5xl font-bold text-gray-200 mb-12">Education & Certifications</h2>
             
-            {/* Education Section */}
             <div className="mb-16">
                 {educationData.map((edu, index) => (
                     <div key={index} className="flex items-center justify-center gap-8 mb-8">
@@ -66,7 +62,6 @@ const EducationAndCertifications = () => {
                 ))}
             </div>
 
-            {/* Visual Divider */}
             <div className="relative my-16">
                 <div className="absolute inset-0 flex items-center" aria-hidden="true">
                     <div className="w-full border-t border-gray-700" />
@@ -78,7 +73,6 @@ const EducationAndCertifications = () => {
                 </div>
             </div>
 
-            {/* Certifications Section */}
             <div>
                 <p className="text-gray-400 italic mb-8">
                     All certifications can be validated at 

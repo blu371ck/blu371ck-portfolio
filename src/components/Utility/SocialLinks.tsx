@@ -8,7 +8,7 @@ const SocialLinks = () => (
     <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
       <GitHubIcon className="w-8 h-8" />
     </a>
-    <a href="mailto:email@example.com" className="text-gray-400 hover:text-white transition-colors duration-300">
+    <a href="mailto:url54.andrew@gmail.com" className="text-gray-400 hover:text-white transition-colors duration-300">
       <EmailIcon className="w-8 h-8" />
     </a>
   </div>
