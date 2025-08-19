@@ -56,8 +56,8 @@ const Navigation = () => {
 
             {/* Mobile Header */}
             <header className="md:hidden fixed top-0 left-0 w-full bg-black/50 backdrop-blur-sm h-16 z-40 flex items-center justify-between px-4">
-                 <div className="text-xl font-bold text-gray-300">AM</div>
-                 <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-300 z-50" aria-label="Open mobile menu">
+                 <div className="text-xl font-bold text-htb-500">AM</div>
+                 <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className="text-htb-500 z-50" aria-label="Open mobile menu">
                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" /></svg>
                  </button>
             </header>
