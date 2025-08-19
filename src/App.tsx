@@ -79,9 +79,10 @@ const App = () => {
 
       <section id="about" ref={aboutRef} className={`relative h-screen flex flex-col items-center justify-center text-center transition-opacity duration-1000 ease-in-out z-10 px-6 ${isAboutVisible ? 'opacity-100' : 'opacity-0'}`}>
           <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-300 mb-8">About Me</h2>
+              <h2 className="text-4xl sm:text-4xl md:text-6xl font-bold text-gray-300 mb-8">About Me</h2>
               <div className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed text-left space y-4">
                 <p>My journey into cybersecurity wasn't a straight line, but a path forged from a deep-seated curiosity for how things work—and how they can be broken. Starting in system administration, I gained a foundational understanding of the infrastructure that powers our digital world. However, I was always drawn to the unseen battles happening on the network, the intricate dance between attacker and defender.</p>
+                <br/>
                 <p>This fascination led me to specialize in defensive cybersecurity. For me, it's not just about reacting to threats; it's about proactive defense, threat hunting, and building resilient systems. From conducting network forensic analyses to architecting automated threat response systems in the cloud, my passion lies in turning the tables on adversaries. Building my own security homelab was a pivotal moment, allowing me to simulate real-world attacks and hone my skills in a controlled environment. I believe the best defense is a deep understanding of the offense, and I thrive on the constant challenge of staying one step ahead.</p>
               </div>
               <div className="mt-12 w-1/2 mx-auto h-px bg-gradient-to-r from-transparent via-htb-500 to-transparent"></div>
