@@ -27,45 +27,13 @@ const App = () => {
   const skillsRef = useRef<HTMLElement>(null);
   const educationRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
-  const [isMainVisible, setMainVisible] = useState(true);
-  const [isAboutVisible, setAboutVisible] = useState(false);
-  const [isProjectsVisible, setProjectsVisible] = useState(false);
-  const [isSkillsVisible, setSkillsVisible] = useState(false);
-  const [isEducationVisible, setEducationVisible] = useState(false);
-  const [isContactVisible, setContactVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.target === mainRef.current) setMainVisible(entry.isIntersecting);
-          else if (entry.target === aboutRef.current) setAboutVisible(entry.isIntersecting);
-          else if (entry.target === projectsRef.current) setProjectsVisible(entry.isIntersecting);
-          else if (entry.target === skillsRef.current) setSkillsVisible(entry.isIntersecting);
-          else if (entry.target === educationRef.current) setEducationVisible(entry.isIntersecting);
-          else if (entry.target === contactRef.current) setContactVisible(entry.isIntersecting);
-        });
-      }, { threshold: 0.5 }
-    );
-
-    const refs = [mainRef, aboutRef, projectsRef, skillsRef, educationRef, contactRef];
-    refs.forEach(ref => {
-        if (ref.current) observer.observe(ref.current);
-    });
-
-    return () => {
-        refs.forEach(ref => {
-            if (ref.current) observer.unobserve(ref.current);
-        });
-    };
-  }, []);
 
   return (
     <div className="relative bg-black font-sans text-white md:pl-20">
       <CyberBackground />
       <Navigation />
 
-      <main id="home" ref={mainRef} className={`relative h-screen flex flex-col items-center justify-center text-center transition-opacity duration-1000 ease-in-out z-10 px-4 ${isMainVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <main id="home" ref={mainRef} className={`relative h-screen flex flex-col items-center justify-center text-center transition-opacity duration-1000 ease-in-out z-10 px-4 `}>
         <div className="flex-grow flex flex-col items-center justify-center">
           <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight font-sub-header text-gray-300">Andrew McKenzie</h1>
           <div className="mt-4 flex items-center text-2xl sm:text-3xl md:text-5xl font-light text-gray-300 font-sub-header">
@@ -77,7 +45,7 @@ const App = () => {
         <ScrollDownIndicator text="About Me" />
       </main>
 
-      <section id="about" ref={aboutRef} className={`relative h-screen flex flex-col items-center justify-center text-center transition-opacity duration-1000 ease-in-out z-10 px-6 ${isAboutVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <section id="about" ref={aboutRef} className={`relative h-screen flex flex-col items-center justify-center text-center transition-opacity duration-1000 ease-in-out z-10 px-6 `}>
           <div className="max-w-4xl mx-auto">
               <h2 className="text-4xl sm:text-4xl md:text-6xl font-bold text-gray-300 mb-8">About Me</h2>
               <div className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed text-left space y-4">
@@ -90,22 +58,22 @@ const App = () => {
           <ScrollDownIndicator text="My Projects" />
       </section>
 
-      <section id="projects" ref={projectsRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 px-4 ${isProjectsVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <section id="projects" ref={projectsRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 px-4 `}>
         <Projects />
         <ScrollDownIndicator text="Skills" />
       </section>
 
-      <section id="skills" ref={skillsRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 px-4 ${isSkillsVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <section id="skills" ref={skillsRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 px-4 `}>
         <Skills />
         <ScrollDownIndicator text="Education" />
       </section>
 
-      <section id="education" ref={educationRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 px-4 ${isEducationVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <section id="education" ref={educationRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 px-4 `}>
         <EducationAndCertifications />
         <ScrollDownIndicator text="Contact Me" />
       </section>
 
-      <section id="contact" ref={contactRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 px-4 ${isContactVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <section id="contact" ref={contactRef} className={`relative min-h-screen flex flex-col items-center justify-center py-20 transition-opacity duration-1000 ease-in-out z-10 px-4 `}>
         <Contact />
       </section>
     </div>

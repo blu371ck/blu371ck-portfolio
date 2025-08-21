@@ -8,10 +8,10 @@ describe('SocialLinks Component', () => {
     
     const allLinks = screen.getAllByRole('link');
 
-    const linkedInLink = allLinks.find(link => link.getAttribute('href') === 'https://www.linkedin.com');
+    const linkedInLink = allLinks.find(link => link.getAttribute('href') === 'https://www.linkedin.com/in/mckenzie-andrew/');
     expect(linkedInLink).toBeInTheDocument();
 
-    const githubLink = allLinks.find(link => link.getAttribute('href') === 'https://www.github.com');
+    const githubLink = allLinks.find(link => link.getAttribute('href') === 'https://github.com/blu371ck');
     expect(githubLink).toBeInTheDocument();
 
     const emailLink = allLinks.find(link => link.getAttribute('href') === 'mailto:url54.andrew@gmail.com');
