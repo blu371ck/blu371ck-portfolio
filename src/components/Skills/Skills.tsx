@@ -47,10 +47,10 @@ const skillsData = [
 ];
 
 const categoryColors: { [key: string]: string } = {
-    'Languages & Scripting': 'bg-gray-500 hover:bg-gray-400',
-    'Cloud & DevOps': 'bg-orange-500 hover:bg-orange-400',
-    'Offensive Security': 'bg-red-500 hover:bg-red-400',
-    'Defensive Security': 'bg-blue-500 hover:bg-blue-400'
+    'Languages & Scripting': 'bg-gray-700 hover:bg-gray-600',
+    'Cloud & DevOps': 'bg-orange-700 hover:bg-orange-600',
+    'Offensive Security': 'bg-red-700 hover:bg-red-600',
+    'Defensive Security': 'bg-blue-700 hover:bg-blue-600'
 };
 
 const Skills = () => {
@@ -58,17 +58,17 @@ const Skills = () => {
 
     return (
         <div className="w-full max-w-5xl mx-auto text-center">
-            <h2 className="text-5xl font-bold text-gray-200 mb-12">Skills & Technologies</h2>
+            <h2 id="skills-heading" className="text-5xl font-bold text-gray-200 mb-12">Skills & Technologies</h2>
             {categories.map(category => (
                 <div key={category} className="mb-8">
                     <h3 className="text-2xl font-semibold text-gray-400 mb-4 text-left border-b border-htb-500 pb-2">{category}</h3>
-                    <div className="flex flex-wrap gap-3 justify-start">
+                    <ul className="flex flex-wrap gap-3 justify-start">
                         {skillsData.filter(skill => skill.category === category).map(skill => (
-                            <div key={skill.name} className={`group relative ${categoryColors[category]} text-white font-semibold py-2 px-4 rounded-full shadow-md transition-transform duration-300 hover:scale-110`}>
+                            <li key={skill.name} className={`group relative ${categoryColors[category]} text-white font-semibold py-2 px-4 rounded-full shadow-md transition-transform duration-300 hover:scale-110`}>
                                 {skill.name}
-                            </div>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 </div>
             ))}
         </div>

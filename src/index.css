@@ -5,3 +5,7 @@
     --color-htb-500: oklch(0.8714 0.286 141.53);
     --font-sub-header: "IBM Plex Mono", mono;
 }
+
+html {
+    scroll-behavior: smooth;
+}

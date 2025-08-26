@@ -1,5 +1,5 @@
 import React from "react";
-import EducationAndCertifications, { educationData, certificationData } from "./EducationAndCertifications";
+import EducationAndCertifications, { certificationData } from "./EducationAndCertifications";
 import { render, screen } from '@testing-library/react';
 
 
@@ -32,7 +32,7 @@ describe('EducationAndCertifications Component', () => {
     it('renders all certification images', () => {
         render(<EducationAndCertifications />);
         const allImages = screen.getAllByRole('img');
-        const certImages = allImages.filter(img => (img as HTMLImageElement).alt !== 'University Logo');
+        const certImages = allImages.filter(img => (img as HTMLImageElement).alt !== 'Western Governors University logo');
         
         expect(certImages.length).toBe(certificationData.length);
         expect(screen.getByAltText('CompTIA Security+')).toBeInTheDocument();

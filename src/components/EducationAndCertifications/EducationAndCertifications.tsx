@@ -48,12 +48,12 @@ export const certificationData = [
 const EducationAndCertifications = () => {
     return (
         <div className="w-full max-w-6xl mx-auto text-center">
-            <h2 className="text-5xl font-bold text-gray-200 mb-12">Education & Certifications</h2>
+            <h2 id="education-heading" className="text-5xl font-bold text-gray-200 mb-12">Education & Certifications</h2>
             
             <div className="mb-16">
                 {educationData.map((edu, index) => (
                     <div key={index} className="flex items-center justify-center gap-8 mb-8">
-                        <img src={edu.logoUrl} alt="University Logo" className="h-24 w-24 object-contain"/>
+                        <img src={edu.logoUrl} alt="Western Governors University logo" className="h-24 w-24 object-contain"/>
                         <div className="text-left text-gray-300">
                             <p className="text-2xl font-bold">{edu.degree}</p>
                             <p className="text-xl">{edu.field}</p>
@@ -76,13 +76,13 @@ const EducationAndCertifications = () => {
             <div>
                 <p className="text-gray-400 italic mb-8">
                     All certifications can be validated at 
-                    <a href="https://www.credly.com/users/mckenzie.andrew" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline mx-1">Credly</a> 
+                    <a href="https://www.credly.com/users/mckenzie.andrew" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline mx-1 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-sm">Credly</a> 
                     and 
-                    <a href="https://www.linkedin.com/in/mckenzie-andrew/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline ml-1">LinkedIn</a>.
+                    <a href="https://www.linkedin.com/in/mckenzie-andrew/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline ml-1 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-sm">LinkedIn</a>.
                 </p>
                 <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-8">
                     {certificationData.map(cert => (
-                        <div key={cert.name} className="group relative flex flex-col items-center justify-center" title={cert.name}>
+                        <div key={cert.name} className="group relative flex flex-col items-center justify-center">
                             <img src={cert.logoUrl} alt={cert.name} className="h-24 w-24 object-contain transition-transform duration-300 group-hover:scale-110"/>
                         </div>
                     ))}
