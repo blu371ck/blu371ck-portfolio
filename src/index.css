@@ -6,6 +6,12 @@
     --font-sub-header: "IBM Plex Mono", mono;
 }
 
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }

@@ -45,7 +45,7 @@ const Navigation = () => {
             aria-label={name}
             onClick={() => isMobile && setMobileMenuOpen(false)}
         >
-            <Icon className={`w-6 h-6 ${isMobile ? 'mr-4 text-green-400' : 'text-green-400 group-hover:text-white'}`} />
+            <Icon className={`w-6 h-6 ${isMobile ? 'mr-4 text-htb-500' : 'text-white group-hover:text-htb-500 transition-colors duration-300'}`} />
             {isMobile ? name : (
                 <span className="absolute left-full ml-4 px-2 py-1 bg-gray-900 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                     {name}

@@ -45,8 +45,7 @@ const projectData = [
         projects: [
             { title: "Security Operations & Threat Hunting Homelab", url: "https://github.com/blu371ck/Security-Operations-Threat-Hunting-Homelab" },
             { title: "Splunk Boss of the SOC V1 - Walkthrough", url: "https://gist.github.com/blu371ck/85189624df1370c268b5698f10d1259f" },
-            { title: "Splunk Boss of the SOC V2 - Walkthrough", url: "https://gist.github.com/blu371ck/a966574f14f5c2b5f6f4b48ef419be7f" },
-            { title: "Splunk Boss of the SOC V3", url: "#" }
+            { title: "Splunk Boss of the SOC V2 - Walkthrough", url: "https://gist.github.com/blu371ck/a966574f14f5c2b5f6f4b48ef419be7f" }
         ]
     },
     {
@@ -72,7 +71,7 @@ const projectData = [
         summary: "I develop custom scripts and tools to automate security tasks, streamline workflows, and enhance defensive capabilities. My projects in this area focus on creating practical solutions for common cybersecurity challenges, from data parsing and analysis to automated system hardening.",
         projects: [
             { title: "PSVirusTotal: PowerShell Script for VirusTotal API (WIP)", url: "https://github.com/blu371ck/PSVirusTotal" },
-            { title: "Placeholder Project Title", url: "#" }
+            { title: "AWS Reflex", url: "https://github.com/blu371ck/aws-reflex" }
         ]
     },
     {
@@ -152,13 +151,13 @@ const ProjectModal = ({ category, onClose }: { category: ProjectCategory | null;
 
 const ProjectCard = ({ category, onClick }: { category: ProjectCategory; onClick: (event: React.MouseEvent<HTMLButtonElement>) => void; }) => (
     <button
-        className="cursor-pointer rounded-lg shadow-lg flex flex-col p-6 text-white text-left relative overflow-hidden bg-gray-900 transition-transform duration-300 hover:scale-105 focus-visible:ring-2 focus-visible:ring-blue-400"
+        className="cursor-pointer rounded-lg shadow-lg flex flex-col p-6 text-white text-left relative overflow-hidden bg-gray-950/65 transition-transform duration-300 hover:scale-105 focus-visible:ring-2 focus-visible:ring-blue-400"
         onClick={onClick}
     >
         <div className="flex-grow flex items-center justify-center mb-4">
-            <img src={category.image} alt="" className="h-40 w-40 object-contain" />
+            <img src={category.image} alt="" className="h-35 w-30 object-contain" />
         </div>
-        <h3 className="text-2xl font-bold z-10 relative text-center">{category.title}</h3>
+        <h3 className="text-lg font-bold z-10 relative text-center">{category.title}</h3>
     </button>
 );
 
@@ -220,9 +219,9 @@ const Projects = () => {
 
 
     return (
-        <div className="w-full max-w-7xl mx-auto">
-            <h2 id="project-heading" className="text-5xl font-bold text-gray-200 mb-12 text-center">My Projects</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="w-full max-w-5xl mx-auto">
+            <h2 id="project-heading" className="text-5xl font-bold text-gray-200 mb-30 text-center">My Projects</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projectData.map(category => (
                     <ProjectCard
                         key={category.title}
