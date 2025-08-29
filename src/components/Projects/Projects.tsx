@@ -61,8 +61,8 @@ const projectData = [
         image: malwareAnalysis,
         summary: "I analyze malicious software to understand its behavior, origin, and impact. This involves reverse-engineering, sandboxing, and code analysis to uncover functionality, identify indicators of compromise (IOCs), and develop effective countermeasures and detection signatures.",
         projects: [
-            { title: "Placeholder Project Title", url: "#" },
-            { title: "Placeholder Project Title", url: "#" }
+            { title: "Malware Analysis: WannaCry Ransomware", url: "https://github.com/blu371ck/Malware-Analysis-WannaCry-Ransomware" },
+            { title: "Malware Analysis: PDF dropper for AgentTesla", url: "https://github.com/blu371ck/Malware-Analysis-PDF-Dropper" }
         ]
     },
     {
@@ -71,7 +71,7 @@ const projectData = [
         summary: "I develop custom scripts and tools to automate security tasks, streamline workflows, and enhance defensive capabilities. My projects in this area focus on creating practical solutions for common cybersecurity challenges, from data parsing and analysis to automated system hardening.",
         projects: [
             { title: "PSVirusTotal: PowerShell Script for VirusTotal API (WIP)", url: "https://github.com/blu371ck/PSVirusTotal" },
-            { title: "AWS Reflex", url: "https://github.com/blu371ck/aws-reflex" }
+            { title: "Example Python Library for Automating GuardDuty Findings", url: "https://github.com/blu371ck/aws-reflex" }
         ]
     },
     {
