@@ -50,7 +50,7 @@ const App = () => {
               <h2 id="about-heading" className="text-4xl sm:text-4xl md:text-6xl font-bold text-gray-300 mb-8">About Me</h2>
               <div className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed text-left space-y-4">
                 <p>My career in cybersecurity began with a foundational role in system administration, where I developed a deep understanding of the digital infrastructure that businesses rely on. This experience ignited my passion for network security and the complex dynamics between attackers and defenders.</p>
-                <p>Today, I specialize in defensive cybersecurity, guided by the belief that a deep understanding of offensive tactics is the cornerstone of an effective defense. My proactive approach to learning involves designing and building custom homelab environments to master advanced concepts and test defensive strategies in a practical setting. My core expertise includes:</p>
+                <p>Today, I specialize in defensive cybersecurity, guided by the belief that a deep understanding of offensive tactics is the cornerstone of an effective defense. My initiative-taking approach to learning involves designing and building custom homelab environments to master advanced concepts and test defensive strategies in a practical setting. My core expertise includes:</p>
                 <ul className="list-disc list-inside space-y-2 pl-4 text-htb-500">
                   <li><span className="text-gray-400">Digital Forensic Analysis & Threat Detection</span></li>
                   <li><span className="text-gray-400">Translating complex technical findings into actionable intelligence</span></li>

@@ -62,7 +62,9 @@ const projectData = [
         summary: "I analyze malicious software to understand its behavior, origin, and impact. This involves reverse-engineering, sandboxing, and code analysis to uncover functionality, identify indicators of compromise (IOCs), and develop effective countermeasures and detection signatures.",
         projects: [
             { title: "Malware Analysis: WannaCry Ransomware", url: "https://github.com/blu371ck/Malware-Analysis-WannaCry-Ransomware" },
-            { title: "Malware Analysis: PDF dropper for AgentTesla", url: "https://github.com/blu371ck/Malware-Analysis-PDF-Dropper" }
+            { title: "Malware Analysis: PDF dropper for AgentTesla", url: "https://github.com/blu371ck/Malware-Analysis-PDF-Dropper" },
+            { title: "Malware Analysis: Obfuscated VBS Macro in Word DOC", url: "https://github.com/blu371ck/Malware-Analysis-Obfuscated-VBS-Macro-DOC"},
+            { title: "Malware Analysis: Malicious Excel AddIn", url: "https://github.com/blu371ck/Malware-Analysis-Malicious-Excel-AddIn" }
         ]
     },
     {
